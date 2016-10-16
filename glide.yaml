@@ -1,0 +1,13 @@
+package: github.com/codegp/kubeclient
+import:
+- package: github.com/codegp/cloud-persister
+  subpackages:
+  - models
+- package: github.com/codegp/env
+- package: k8s.io/kubernetes
+  subpackages:
+  - pkg/api
+  - pkg/api/unversioned
+  - pkg/client/unversioned
+  - pkg/fields
+  - pkg/watch
