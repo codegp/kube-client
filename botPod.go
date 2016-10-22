@@ -21,7 +21,7 @@ func createBotPod(ip string, botID int32, proj *models.Project, game *models.Gam
 
 func botPodMeta(game *models.Game, botID int32) api.ObjectMeta {
 	return api.ObjectMeta{
-		Name: fmt.Sprintf("bot-%d-%d", game.ID, botID),
+		Name: fmt.Sprintf("bot-runner-%d-%d", game.ID, botID),
 	}
 }
 
@@ -57,8 +57,8 @@ func botPodContainers(ip string, botID int32, proj *models.Project, game *models
 	log.Println("asdf")
 	return []api.Container{
 		api.Container{
-			Name:         fmt.Sprintf("bot-%d", botID),
-			Image:        registry(fmt.Sprintf("botrunner-%d-%s", game.GameTypeID, proj.Language)),
+			Name:         fmt.Sprintf("bot-runner-%d", botID),
+			Image:        registry(fmt.Sprintf("bot-runner-%d-%s", game.GameTypeID, proj.Language)),
 			Ports:        botPodContainerPorts(),
 			Env:          botRunnerEnv(ip, botID, proj),
 			VolumeMounts: botPodVolumeMounts(),

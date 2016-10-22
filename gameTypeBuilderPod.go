@@ -24,7 +24,7 @@ func createGameTypeBuilderPod(gameType *models.GameType) *api.Pod {
 
 func gameTypePodMeta(gameType *models.GameType) api.ObjectMeta {
 	return api.ObjectMeta{
-		Name: fmt.Sprintf("builder-%d", gameType.ID),
+		Name: fmt.Sprintf("game-type-builder-%d", gameType.ID),
 	}
 }
 
@@ -57,8 +57,8 @@ func gameTypeBuilderPodContainers(gameType *models.GameType) []api.Container {
 
 func gameTypeBuilderContainer(gameType *models.GameType) api.Container {
 	return api.Container{
-		Name:            "builder",
-		Image:           registry("builder"),
+		Name:            "game-type-builder",
+		Image:           registry("game-type-builder"),
 		SecurityContext: privilegedSecurityContext(),
 		Env:             gameTypeBuilderEnv(gameType),
 		VolumeMounts:    gameTypeBuilderPodVolumeMounts(),
