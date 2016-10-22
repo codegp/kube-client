@@ -1,4 +1,4 @@
-package: github.com/codegp/kubeclient
+package: github.com/codegp/kube-client
 import:
 - package: github.com/codegp/cloud-persister
   subpackages:
