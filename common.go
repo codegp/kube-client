@@ -11,10 +11,7 @@ import (
 const localStoreVolumeName string = "local-store-vol"
 
 func registry(image string) string {
-	if env.IsLocal() {
-		return fmt.Sprintf("local/codegp/%s:latest", image)
-	}
-	return fmt.Sprintf("gcr.io/codegp/%s:latest", image)
+	return fmt.Sprintf("gcr.io/%s/%s:latest", env.GCloudProjectID(), image)
 }
 
 func configEnv() []api.EnvVar {
