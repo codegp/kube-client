@@ -55,7 +55,7 @@ func gamePodContainers(game *models.Game) []api.Container {
 	return []api.Container{
 		api.Container{
 			Name:            fmt.Sprintf("game-%d", game.ID),
-			Image:           registry(fmt.Sprintf("gamerunner-%d", game.GameTypeID)),
+			Image:           registry(fmt.Sprintf("game-runner-%d", game.GameTypeID)),
 			Ports:           gamePodContainerPorts(),
 			Env:             gameRunnerEnv(game),
 			VolumeMounts:    gamePodVolumeMounts(),
