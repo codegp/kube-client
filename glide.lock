@@ -1,5 +1,5 @@
-hash: 9a25933358a8469dde1c13f1900c0297992b2449b10ed7f3294f4b4161a77b53
-updated: 2016-10-15T19:20:08.657692265-06:00
+hash: 4c828031954edad479c6af2f3dd7f2811f491a558c01db805424fe13426a4022
+updated: 2016-10-29T14:50:26.224170216-06:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -9,11 +9,11 @@ imports:
 - name: github.com/blang/semver
   version: 31b736133b98f26d5e078ec9eb591666edfd091f
 - name: github.com/codegp/cloud-persister
-  version: f32b964c7d7bb389701be9d4c769b7ff9e71014a
+  version: 23b8263a4676fa593cefd96e8ce6b8cfa682d53a
   subpackages:
   - models
 - name: github.com/codegp/env
-  version: 336f55c547ee75bb1941c9e5bf4dda6586332224
+  version: 995611706bf3d9a4cff43cd004fd44919493995f
 - name: github.com/coreos/go-oidc
   version: 5644a2f50e2d2d5ba0b474bc5bc55fea1925936d
   subpackages:
