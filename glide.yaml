@@ -5,6 +5,7 @@ import:
   - models
 - package: github.com/codegp/env
 - package: k8s.io/kubernetes
+  version: 8b6cebcb3532413085252f6148629f6c66de3adb
   subpackages:
   - pkg/api
   - pkg/api/unversioned
