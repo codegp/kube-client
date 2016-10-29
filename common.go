@@ -67,7 +67,7 @@ func localStoreVolume() api.Volume {
 		Name: localStoreVolumeName,
 		VolumeSource: api.VolumeSource{
 			HostPath: &api.HostPathVolumeSource{
-				Path: env.LocalStorePath(),
+				Path: env.LocalStorePath,
 			},
 		},
 	}
@@ -77,6 +77,6 @@ func localStoreVolumeMount() api.VolumeMount {
 	return api.VolumeMount{
 		Name:      localStoreVolumeName,
 		ReadOnly:  false,
-		MountPath: env.LocalStorePath(),
+		MountPath: env.LocalStorePath,
 	}
 }

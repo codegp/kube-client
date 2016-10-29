@@ -38,7 +38,7 @@ func gamePodSourceVolumes() []api.Volume {
 			Name: sourceVolumeName,
 			VolumeSource: api.VolumeSource{
 				HostPath: &api.HostPathVolumeSource{
-					Path: env.SourcePath(),
+					Path: env.SourcePath,
 				},
 			},
 		},
@@ -69,7 +69,7 @@ func gamePodVolumeMounts() []api.VolumeMount {
 		api.VolumeMount{
 			Name:      sourceVolumeName,
 			ReadOnly:  true,
-			MountPath: env.SourcePath(),
+			MountPath: env.SourcePath,
 		},
 	}
 	if env.IsLocal() {

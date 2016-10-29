@@ -39,7 +39,7 @@ func botPodSourceVolumes(projID int64) []api.Volume {
 			Name: botSourceVolumeName,
 			VolumeSource: api.VolumeSource{
 				HostPath: &api.HostPathVolumeSource{
-					Path: fmt.Sprintf("/%s/%d", env.SourcePath(), projID),
+					Path: fmt.Sprintf("/%s/%d", env.SourcePath, projID),
 				},
 			},
 		},
@@ -73,7 +73,7 @@ func botPodVolumeMounts() []api.VolumeMount {
 		api.VolumeMount{
 			Name:      botSourceVolumeName,
 			ReadOnly:  false,
-			MountPath: env.SourcePath(),
+			MountPath: env.SourcePath,
 		},
 	}
 
@@ -104,10 +104,8 @@ func botRunnerEnv(ip string, botID int32, proj *models.Project) []api.EnvVar {
 }
 
 func botContainerSecurityContext() *api.SecurityContext {
-	// SecurityContext wants pointers to bools, i'm not crazy
+	// SecurityContext wants pointers to bools
 	readOnly := false
-	log.Println("NOT READ ONLY")
-	// runAsNonRoot := true
 	return &api.SecurityContext{
 		ReadOnlyRootFilesystem: &readOnly,
 	}
